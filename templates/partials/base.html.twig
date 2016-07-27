@@ -1,56 +1,53 @@
-<!doctype html>
-<html class="no-js" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Foundation</title>
-
-    {% block head %}
+<!DOCTYPE html>
+<html lang="{{ grav.language.getLanguage ?: 'en' }}">
+<head>
+  {% block head %}
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% if header.description %}
-    <meta name="description" content="{{ header.description }}">
+      <meta name="description" content="{{ header.description }}">
     {% else %}
-    <meta name="description" content="{{ site.description }}">
+      <meta name="description" content="{{ site.description }}">
     {% endif %}
     {% if header.robots %}
-    <meta name="robots" content="{{ header.robots }}">
+      <meta name="robots" content="{{ header.robots }}">
     {% endif %}
+    <title>{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
     <link rel="icon" type="image/png" href="{{ theme_url }}/images/favicon.png">
 
-    <title>{% if header.title %}{{ header.title }} | {% endif %}{{ site.title }}</title>
-
     {% block stylesheets %}
-        {# Bootstrap core CSS #}
-        {% do assets.add('theme://app/bower_components/foundation/css/foundation.min.css',101) %}
-
-    {# Custom styles for this theme #}
-        {% do assets.add('theme://css/foundation-custom.css',100) %}
-
-        {{ assets.css() }}
+      {% do assets.addCss('theme://bower_components/foundation-icon-fonts/foundation-icons.css', 101) %}
+      {% do assets.addCss('theme://css/app.css') %}
     {% endblock %}
+    {{ assets.css() }}
 
     {% block javascripts %}
-        {% do assets.add('theme://app/bower_components/jquery/dist/jquery.min.js', 101) %}
-        {% do assets.add('theme://app/bower_components/foundation/js/foundation.min.js') %}
-
-
-        {{ assets.js() }}
+      {% do assets.addJs('theme://bower_components/jquery/dist/jquery.min.js', 102) %}
+      {% do assets.addJs('theme://bower_components/what-input/what-input.min.js', 101) %}
+      {% do assets.addJs('theme://bower_components/foundation-sites/dist/foundation.min.js') %}
     {% endblock %}
+    {{ assets.js() }}
 
-    {% endblock head %}
-  </head>
-  <body>
-
-    {# include the header + navigation #}
+  {% endblock head %}
+</head>
+<body>
+  {% block header %}
     {% include 'partials/header.html.twig' %}
+  {% endblock %}
 
-    <div class="row">
-      <div class="large-12 columns">
-        {% block content %}{% endblock %}
-      </div>
-    </div>
+  {% block body %}
+    {% block content %}{% endblock %}
+  {% endblock %}
 
-    {% block bottom %}{% endblock %}
-  </body>
+  {% block footer %}
+    {% include 'partials/footer.html.twig' %}
+  {% endblock %}
+
+  {% block bottom %}
+    <script>
+      $(document).foundation();
+    </script>
+  {% endblock %}
+</body>
 </html>

@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/brettdewoody/grav-theme-foundation",
   "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
     "gulp-sass": "^2.0.1",
     "gulp-watch": "^4.2.4"
   }

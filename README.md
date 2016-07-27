@@ -91,8 +91,6 @@ Once this is done, you should be able to see the new theme on the frontend. Keep
 
 The Foundation theme includes a Gulp script to compile the SCSS into CSS. You'll need to install [NPM](https://www.npmjs.com/package/npm), [Bower](http://bower.io/) and [Gulp](http://gulpjs.com/) for this. If you have [NPM](https://www.npmjs.com/package/npm) installed this is pretty simple. From the Foundation theme directory (`/user/themes/foundation`), type the following:
 
-    npm install --global gulp
-    npm install --save-dev gulp
     npm install
     bower install
 

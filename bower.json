@@ -1,0 +1,21 @@
+{
+  "name": "grav-theme-foundation",
+  "description": "A theme for Grav using the Zurb Foundation front-end framework.",
+  "main": "gulpfile.js",
+  "authors": [
+    "Brett DeWoody <brettdewoody@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/brettdewoody/grav-theme-foundation",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation-sites": "^6.2.3",
+    "foundation-icon-fonts": "*"
+  }
+}
