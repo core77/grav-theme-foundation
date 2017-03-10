@@ -100,4 +100,8 @@ When in development you can run:
 
     gulp watch
 
-to watch your SCSS files for changes and compile the CSS.
+to watch your SCSS files for changes, compile the CSS and automatically reload your browser.
+
+Browser-Sync assumes you have your GRAV installation running on "localhost". You have to change this setting in the 'browser-sync' gulp task if your GRAV installation is running from a subfolder.
+
+    proxy: "localhost/my-grav-installation"
