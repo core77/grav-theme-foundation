@@ -102,6 +102,14 @@ When in development you can run:
 
 to watch your SCSS files for changes, compile the CSS and automatically reload your browser.
 
+Access your GRAV site
+
+    http://localhost:3000
+
+Access the Browser-Sync UI:
+
+    http://localhost:3001
+
 Browser-Sync assumes you have your GRAV installation running on "localhost". You have to change this setting in the 'browser-sync' gulp task if your GRAV installation is running from a subfolder.
 
     proxy: "localhost/my-grav-installation"
